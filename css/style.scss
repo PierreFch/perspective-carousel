@@ -2,6 +2,9 @@
     --slider-height: 500px;
     --slide-height: 400px;
     --slide-width: 600px;
+
+    --color-background: #131921;
+    --color-dots: #40c463;
 }
 
 body {
@@ -10,7 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: var(--color-background);
 }
 
 .carousel-container {
@@ -77,6 +80,7 @@ body {
         height: 100%;
         object-fit: cover;
         display: block;
+        border-radius: 16px;
     }
 }
 
@@ -84,7 +88,7 @@ body {
     text-align: center;
     position: absolute;
     width: 100%;
-    bottom: 10px;
+    bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,29 +101,21 @@ body {
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
+    height: 12px;
+    width: 12px;
     margin: 0 5px;
-    background-color: #bbb;
+    background-color: var(--color-dots);
     border-radius: 50%;
     display: inline-block;
     cursor: pointer;
 
-    &.active {
-        background-color: #717171;
+    &:not(.active) {
+        opacity: .3;
     }
 }
 
 .arrow {
     cursor: pointer;
-    width: 30px;
-    height: 30px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
     user-select: none;
-    margin: 0 10px;
+    margin-inline: 10px;
 }
